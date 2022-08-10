@@ -9,6 +9,7 @@
 | name               | string | null: false, unique: true |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
+| birthday           | date   | null: false               |
 
 
 
