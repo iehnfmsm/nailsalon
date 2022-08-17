@@ -12,17 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2022_08_15_095740) do
 
-  create_table "prefers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefer_time_id", null: false
-    t.integer "prefer_wday_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.date "date", null: false
-    t.integer "prefer_time_id", null: false
+    t.integer "prefer_id", null: false
     t.string "remark"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -31,10 +24,9 @@ ActiveRecord::Schema.define(version: 2022_08_15_095740) do
 
   create_table "user_prefers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "prefer_id", null: false
+    t.integer "prefer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["prefer_id"], name: "index_user_prefers_on_prefer_id"
     t.index ["user_id"], name: "index_user_prefers_on_user_id"
   end
 
@@ -54,6 +46,5 @@ ActiveRecord::Schema.define(version: 2022_08_15_095740) do
   end
 
   add_foreign_key "reservations", "users"
-  add_foreign_key "user_prefers", "prefers"
   add_foreign_key "user_prefers", "users"
 end

@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
 
   has_many :reservations
+  has_many :prefers, through: :user_prefers
+  has_many :user_prefers
   
 end
