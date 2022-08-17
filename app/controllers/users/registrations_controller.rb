@@ -6,13 +6,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
    def new
      super
+     @user_form = UserForm.new
    end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+   def create
+     super
+     @user_form = UserForm.new(user_form_params)
+     if @user_form.valid?
+      @user_form.save
+      #redirect_to root_path
+     else
+      render :new
+     end
+   end
 
+  private
+
+  def user_form_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthday)
+  end
   # GET /resource/edit
   # def edit
   #   super
