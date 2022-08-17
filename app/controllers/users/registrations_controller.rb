@@ -16,8 +16,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
      if @user_form.valid?
       @user_form.save
       #redirect_to root_path
-     else
-      render :new
      end
    end
 
