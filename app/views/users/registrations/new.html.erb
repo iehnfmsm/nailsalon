@@ -35,7 +35,10 @@
     <%= f.label :prefer %>
       <div class="checkbox">
         <%= collection_check_boxes(:user_prefer, :prefer_ids, Prefer.all, :id, :wday, include_hidden: false) do |g| %>
-          <%= g.label {g.check_box + g.text} %>
+          <%= g.label {g.check_box + g.object.wday + " : " + g.object.time} %>
+          <%if g. object.time == "18:30 ~ 20:30"%>
+          <p></p>
+          <%end%>
         <% end %>
       </div>
   </div>
