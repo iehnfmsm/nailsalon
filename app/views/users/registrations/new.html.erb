@@ -1,0 +1,51 @@
+<h2>ユーザー登録</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+    <div class="field">
+    <%= f.label "名前" %><br />
+    <%= f.text_field :name, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "メールアドレス" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "パスワード（６字以上１２８字以下）" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "パスワード確認" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "生年月日" %><br />
+    <%= f.date_field :birthday, autocomplete: "birthday" %>
+  </div>
+  <p></p>
+  <div class="form-group">
+    <%= f.label "希望時間帯  (複数選択可)" %>
+      <div class="checkbox">
+        <%= collection_check_boxes(:user_prefer, :prefer_ids, Prefer.all, :id, :wday, include_hidden: false) do |g| %>
+          <%= g.label {g.check_box + g.object.wday + " : " + g.object.time} %>
+          <%if g. object.time == "18:30 ~ 20:30"%>
+          <p></p>
+          <%end%>
+        <% end %>
+      </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
