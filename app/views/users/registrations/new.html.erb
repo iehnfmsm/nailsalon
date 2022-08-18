@@ -26,9 +26,18 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-    <div class="field">
+  <div class="field">
     <%= f.label :birthday %><br />
     <%= f.date_field :birthday, autocomplete: "birthday" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :prefer %>
+      <div class="checkbox">
+        <%= collection_check_boxes(:user_prefer, :prefer_ids, Prefer.all, :id, :wday, include_hidden: false) do |g| %>
+          <%= g.label {g.check_box + g.text} %>
+        <% end %>
+      </div>
   </div>
 
   <div class="actions">

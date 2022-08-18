@@ -10,14 +10,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
    end
 
   # POST /resource
-   def create
-     super
-     @user_form = UserForm.new(user_form_params)
-     if @user_form.valid?
-      @user_form.save
-      #redirect_to root_path
-     end
-   end
+  def create
+    if params[:user_prefer] != nil
+      super
+      if user_signed_in?
+        params[:user_prefer][:prefer_ids].each do |prefer|
+          UserPrefer.create(user_id: current_user.id, prefer_id: prefer)
+        end
+      end
+    else
+      #resource.errors.full_messages = "希望日時を日時を選択してください"
+      #render :new
+      redirect_to new_user_registration_path
+    end
+  end
 
   private
 
