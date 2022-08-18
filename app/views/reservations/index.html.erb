@@ -8,7 +8,11 @@
 <%end%>
 
 <%if user_signed_in?%>
-  <h2>希望日一覧</h2>
+  <h2>
+    <%= "こんにちは、#{current_user.name}さん"%>
+  </h2>
+
+  <h4>希望日一覧</h2>
   <% @user_prefers.each do |prefer| %>
   <div>
     <%= prefer.prefer.wday + " : " + prefer.prefer.time%>
