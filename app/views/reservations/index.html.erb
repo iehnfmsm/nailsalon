@@ -5,3 +5,13 @@
   <%= link_to "新規登録ページ", new_user_registration_path%>
   <%= link_to "ログインページ", new_user_session_path%>
 <%end%>
+
+<%if user_signed_in?%>
+  <h2>希望日一覧</h2>
+  <% @user_prefers.each do |prefer| %>
+  <div>
+    <%= prefer.prefer.wday + " : " + prefer.prefer.time%>
+  </div>
+  <%end%>
+<%end%>
+
