@@ -4,4 +4,8 @@ class ReservationsController < ApplicationController
       @user_prefers = UserPrefer.where(user_id: current_user.id)
     end
   end
+
+  def new
+    
+  end
 end
