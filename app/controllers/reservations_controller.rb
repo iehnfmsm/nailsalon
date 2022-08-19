@@ -7,14 +7,21 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @reservation = Reservation.new
-    @day = params[:day]
+    @reservation = Reservation.new()
+    @day = params[:day].to_date
     @time = params[:time]
-    @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
 
-    message = Reservation.check_reservation_day(@day.to_date)
+    message = Reservation.check_reservation_day(@day)
     if !!message
-      redirect_to @reservation, flash: { alert: message }
+      redirect_to root_path, flash: { alert: message }
     end
   end
+
+  def create
+    binding.pry
+  end
+
+
+  private
+
 end

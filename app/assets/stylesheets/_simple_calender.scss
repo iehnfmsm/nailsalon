@@ -78,6 +78,36 @@ select#outpatient_start_time_2i {
   width: 45px;
 }
 
+.aa{
+  width: 20px;
+}
+
+.outpatient-price-image{
+  text-align: end;
+}
+.outpatient-image{
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.table thead th {
+  background-color: #badcf8;
+}
+.table thead th {
+  border: 1px solid black;
+}
+
+.detail-values-text {
+  width: 153px;
+  white-space: pre-line;
+  word-wrap: break-word;
+  text-align: left;
+  height: 100%;
+  overflow-x: scroll;
+  // overflow-x: scroll;
+}
+
 
 
 // week
