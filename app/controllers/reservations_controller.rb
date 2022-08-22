@@ -7,20 +7,31 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @reservation = Reservation.new()
-    @day = params[:day].to_date
+    @name = User.find(current_user.id)
+    @date = params[:date].to_date
     @time = params[:time]
-
-    message = Reservation.check_reservation_day(@day)
+    @time_id = Prefer.find_by(time: @time).id
+    @start_time = DateTime.parse(params[:date] + " " + @time[0,5] + " " + "JST")
+    @reservation = Reservation.new
+    message = Reservation.check_reservation_day(@date)
     if !!message
       redirect_to root_path, flash: { alert: message }
     end
   end
 
   def create
+    @reservation = Reservation.new(reservation_params)
+    if @reservation.save
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
 
   private
-
+  
+  def reservation_params
+    params.require(:reservation).permit(:user_id, :prefer_id, :date, :start_time, :remark)
+  end
 end

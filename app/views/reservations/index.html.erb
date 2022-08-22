@@ -18,11 +18,11 @@
     <%= prefer.prefer.wday + " : " + prefer.prefer.time%>
   </div>
   <%end%>
-<%end%>
 
-<%= alert%>
-  <div class="col-12 mt-3">
-    <%= week_calendar events: @reservations do |date, reservations| %>
-      <%= date.day %>
-    <% end %>
-  </div>
+  <%= alert%>
+    <div class="col-12 mt-3">
+      <%= week_calendar events: @reservations do |date, reservations| %>
+        <%= date.day %>
+      <% end %>
+    </div>
+  <%end%>

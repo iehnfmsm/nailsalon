@@ -1,9 +1,12 @@
 class Reservation < ApplicationRecord
+
+  extend ActiveHash::Associations::ActiveRecordExtensions 
+
   validates :date, presence: true
-  validates :prefer_time_id, presence: true
+  validates :prefer_id, presence: true
 
   belongs_to :user
-  belongs_to :prefer_time
+  belongs_to :prefer
 
 
   validate :date_before_start
@@ -43,7 +46,7 @@ class Reservation < ApplicationRecord
     reservation_data = []
     reservations.each do |reservation|
     reservations_hash = {}
-    reservations_hash.merge!(day: reservation.day.strftime("%Y-%m-%d"), time: reservation.time, name: reservation.user.name, id:reservation.id)
+    reservations_hash.merge!(date: reservation.date.strftime("%Y-%m-%d"), time: reservation.prefer.time, name: reservation.user.name, id:reservation.id)
     reservation_data.push(reservations_hash)
     end
     reservation_data

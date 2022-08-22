@@ -42,7 +42,7 @@
                 <%elsif day.wday == 0 || day.wday == 6%>
                 <%="-"%>
                 <% else %>
-                  <%= link_to new_reservation_path(day: day, time: time) do %>
+                  <%= link_to new_reservation_path(date: day, time: time, user_id: current_user.id) do %>
                     <%= '○' %>
                   <% end %>
                 <%end%>
