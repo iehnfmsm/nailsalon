@@ -25,6 +25,7 @@ class Prefer < ActiveHash::Base
   include ActiveHash::Associations
   has_many :user_prefers
   has_many :users, through: :user_prefers
+  has_many :reservations
 
   def users
     user_prefer.map(&:user)

@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2022_08_15_095740) do
     t.date "date", null: false
     t.integer "prefer_id", null: false
     t.string "remark"
+    t.datetime "start_time", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_reservations_on_user_id"

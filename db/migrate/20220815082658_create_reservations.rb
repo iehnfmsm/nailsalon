@@ -5,6 +5,7 @@ class CreateReservations < ActiveRecord::Migration[6.0]
       t.date       :date, null: false
       t.integer    :prefer_id, null: false
       t.string     :remark
+      t.datetime   :start_time, null: false
       t.timestamps
     end
   end
