@@ -8,7 +8,7 @@
 
 <%if user_signed_in?%>
   <h2>
-    <%= "こんにちは、#{current_user.name}さん"%>
+    <%= "こんにちは、"%><%= link_to "#{current_user.name}", user_path(current_user.id)%><%="さん！"%>
   </h2>
 
   <h4>希望日一覧</h2>
