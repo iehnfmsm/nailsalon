@@ -1,13 +1,10 @@
 <%= render "users/shared/header"%>
 
 <%if user_signed_in?%>
-  <h2>希望日一覧</h2>
-  <% @user_prefers.each do |prefer| %>
+  <h2>予約カレンダー</h2>
   <div>
-    <%= prefer.prefer.wday + " : " + prefer.prefer.time%>
+    <p>希望する日付の◯をクリックすると予約確認ページへ移動します</p>
   </div>
-  <%end%>
-
   <%= alert%>
     <div class="col-12 mt-3">
       <%= week_calendar events: @reservations do |date, reservations| %>

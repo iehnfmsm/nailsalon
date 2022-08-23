@@ -1,9 +1,20 @@
 <%= render "users/shared/header" %>
 
-<h1>予約一覧</h1>
+<h1>ユーザー情報一覧</h1>
+
+<h4>希望日時</h4>
+<%@user_prefers.each do |prefer|%>
+  <div><%= "#{prefer.prefer.wday}：#{prefer.prefer.time}"%></div>
+<%end%>
+
+
+<h4>予約一覧</h4>
+
+<p>※予約を修正する場合は、枠を確保してから予約をキャンセルしてください</p>
 
 <%@reservations.each do |reservation|%>
   <div>
     <%= "#{reservation.date.year}年#{reservation.date.month}月#{reservation.date.day}日（#{wdays[reservation.date.wday]}）：#{reservation.prefer.time}"%>
+    <%= link_to "予約キャンセル", reservation_path(reservation.id), method: :delete, class:"reservation-destroy" %>
   </div>
 <%end%>
