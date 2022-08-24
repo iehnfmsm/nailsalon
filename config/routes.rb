@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   }
   root to: "reservations#index"
 
-  resources :reservations, only: [:new, :create]
+  resources :reservations, only: [:new, :create, :destroy]
+
+  resources :users, only: [:show]
+    namespace :admin do
+      resources :users, only: [:index, :destroy]
+    end
 end

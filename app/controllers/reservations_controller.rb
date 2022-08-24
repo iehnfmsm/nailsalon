@@ -2,6 +2,7 @@ class ReservationsController < ApplicationController
   def index
     if user_signed_in?
       @user_prefers = UserPrefer.where(user_id: current_user.id)
+      @user = User.find(current_user.id)
     end
     @reservations = Reservation.all.where("date >= ?", Date.current).where("date < ?", Date.current >> 3).order(date: :desc)
   end
@@ -22,10 +23,16 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       redirect_to root_path
     end
+  end
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to root_path
   end
 
 

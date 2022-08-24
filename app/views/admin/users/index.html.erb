@@ -1,0 +1,14 @@
+<%= render "users/shared/header"%>
+
+<h1>管理者用ユーザー管理ページ</h1>
+
+<%@users.each do |user|%>
+  <div class = "user-list">
+    <div class = "user-name">
+      <%=user.name%>
+    </div>
+    <div class = "user-delete">
+      <%=link_to "削除する", admin_user_path(user.id), method: :delete, data:{confirm: "#{user.name}さんを削除しますか？"}%>
+    </div>
+  </div>
+<%end%>

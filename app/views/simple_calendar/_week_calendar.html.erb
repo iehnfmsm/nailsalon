@@ -38,9 +38,13 @@
                 <%elsif day.wday == 0 || day.wday == 6%>
                 <%="-"%>
                 <% else %>
-                  <%= link_to new_reservation_path(date: day, time: time, user_id: current_user.id) do %>
+                  <% if user_signed_in? && @user.admin == false %>
+                    <%= link_to new_reservation_path(date: day, time: time, user_id: current_user.id) do %>
+                      <%= '○' %>
+                    <% end %>
+                  <%else%>
                     <%= '○' %>
-                  <% end %>
+                  <%end%>
                 <%end%>
               </td>
             <% end %>
