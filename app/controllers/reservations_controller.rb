@@ -1,6 +1,5 @@
 class ReservationsController < ApplicationController
   def index
-    binding.pry
     if user_signed_in?
       @user_prefers = UserPrefer.where(user_id: current_user.id)
     end
