@@ -9,9 +9,11 @@
     </div>
   <%end%>
   <h2>予約カレンダー</h2>
+  <%if user_signed_in? && @user.admin == false%>
   <div>
     <p>希望する日付の◯をクリックすると予約確認ページへ移動します</p>
   </div>
+  <%end%>
   <%= alert%>
   <div class="col-12 mt-3">
     <%= week_calendar events: @reservations do |date, reservations| %>

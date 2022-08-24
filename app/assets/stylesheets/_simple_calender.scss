@@ -1,10 +1,55 @@
 .simple-calendar {
-  width: 65%;
-  margin-left: 20px;
+  table {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    box-sizing: border-box;
+    max-width: 90%;
+    width: 90%;
+  }
+
+  tr {
+    border-collapse: collapse;
+  }
+
+  th {
+    padding: 6px;
+    font-weight: 600;
+    border-bottom: 2px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    border-left: 1px solid rgb(221, 221, 221);
+    border-right: 1px solid rgb(221, 221, 221);
+    border-top: 0px none rgb(51, 51, 51);
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  td {
+    padding: 6px;
+    vertical-align: top;
+    width: 12.5%;
+    text-align: center;
+
+    border: 1px solid #ddd;
+    border-top-color: rgb(221, 221, 221);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(221, 221, 221);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(221, 221, 221);
+    border-left-style: solid;
+    border-left-width: 1px;
+  }
 
   .day {
-    border: 1px solid black;
-    height: 92px;
+    height: 30px;
   }
 
   .wday-0 {
@@ -37,83 +82,16 @@
   .current-month {}
 
   .has-events {
-    background-color: yellow;
   }
-}
-
-.outpatient-calendar{
-  display: flex;
-  margin: 30px 0;
-}
-.outpatient-form{
-  width: 25%;
-}
-.outpatient-user-name{
-  text-align: center;
-  height: 60px;
-  width: 80%;
-  margin: 20px auto 30px;
-  font-size: 20px;
-  border: 2px solid #007bff;
-  background-color: #badcf8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.outpatient-form-side{
-  width: 80%;
-  margin: 0 auto;
-}
-.outpatient-form-contents{
-  margin-left: 20px;
-}
-.outpatient-submit{
-  margin: 30px 0 0 0;
-}
-.outpatient-submit-btn{
-  padding:5px 10px;
-  background-color: #badcf8;
-}
-select#outpatient_start_time_2i {
-  width: 45px;
-}
-
-.aa{
-  width: 20px;
-}
-
-.outpatient-price-image{
-  text-align: end;
-}
-.outpatient-image{
-  width: 20px;
-  height: 20px;
-  margin-left: 5px;
-}
-
-.table thead th {
-  background-color: #badcf8;
-}
-.table thead th {
-  border: 1px solid black;
-}
-
-.detail-values-text {
-  width: 153px;
-  white-space: pre-line;
-  word-wrap: break-word;
-  text-align: left;
-  height: 100%;
-  overflow-x: scroll;
-  // overflow-x: scroll;
 }
 
 
 
 // week
 .simple-calendars {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  text-align: center;
 
   .day {
     width: 12.5%;
@@ -131,7 +109,9 @@ select#outpatient_start_time_2i {
   .wday-6 {
     background-color: #bcd8ff;
   }
-
+  .calendar-text{
+    height: 30px;
+  }
   .today {
     background-color: rgb(184, 243, 184);
   }
