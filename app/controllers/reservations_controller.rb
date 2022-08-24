@@ -2,6 +2,7 @@ class ReservationsController < ApplicationController
   def index
     if user_signed_in?
       @user_prefers = UserPrefer.where(user_id: current_user.id)
+      @user = User.find(current_user.id)
     end
     @reservations = Reservation.all.where("date >= ?", Date.current).where("date < ?", Date.current >> 3).order(date: :desc)
   end

@@ -1,14 +1,15 @@
-<%= render "users/shared/header"%>
+  <%= render "users/shared/header"%>
 
-<%if user_signed_in?%>
+  <%if user_signed_in? && @user.admin == true%>
+    <%=link_to "管理者用のユーザー管理ページへ", admin_users_path%>
+  <%end%>
   <h2>予約カレンダー</h2>
   <div>
     <p>希望する日付の◯をクリックすると予約確認ページへ移動します</p>
   </div>
   <%= alert%>
-    <div class="col-12 mt-3">
-      <%= week_calendar events: @reservations do |date, reservations| %>
-        <%= date.day %>
-      <% end %>
-    </div>
-  <%end%>
+  <div class="col-12 mt-3">
+    <%= week_calendar events: @reservations do |date, reservations| %>
+      <%= date.day %>
+    <% end %>
+  </div>

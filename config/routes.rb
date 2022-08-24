@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :reservations, only: [:new, :create, :destroy]
 
   resources :users, only: [:show]
+    namespace :admin do
+      resources :users, only: [:index]
+    end
 end
