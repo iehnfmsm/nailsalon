@@ -116,6 +116,8 @@ select#outpatient_start_time_2i {
   margin: 0 auto;
 
   .day {
+    width: 12.5%;
+    height: 30px;
   }
 
   .wday-0 {
@@ -145,7 +147,8 @@ select#outpatient_start_time_2i {
   .next-month {
     background-color: rgb(217, 217, 217);
   }
-  .current-month {}
+  .current-month {
+  }
 
   .has-events {
   }
