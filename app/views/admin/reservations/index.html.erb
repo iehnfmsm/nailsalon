@@ -7,3 +7,11 @@
     <%="#{reservation.user.name}：#{reservation.date.year}年#{reservation.date.month}月#{reservation.date.day}日（#{wdays[reservation.date.wday]}）　#{reservation.prefer.time}"%>
   </div>
 <%end%>
+
+
+  <%= alert%>
+  <div class="col-12 mt-3">
+    <%= month_calendar events: @reservations do |date, reservations| %>
+      <%= date.day %>
+    <% end %>
+  </div>
