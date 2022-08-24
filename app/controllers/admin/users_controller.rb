@@ -6,6 +6,12 @@ class Admin::UsersController < ApplicationController
     @users = User.all.where(admin: false)
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to admin_users_path
+  end
+
   private
   
   def if_not_admin
