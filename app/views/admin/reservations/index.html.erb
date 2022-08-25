@@ -2,12 +2,6 @@
 
 <h1>管理者用予約管理ページ</h1>
 
-<%@reservations.each do |reservation|%>
-  <div>
-    <%="#{reservation.user.name}：#{reservation.date.year}年#{reservation.date.month}月#{reservation.date.day}日（#{wdays[reservation.date.wday]}）　#{reservation.prefer.time}"%>
-  </div>
-<%end%>
-
 
   <%= alert%>
   <div class="col-12 mt-3">
