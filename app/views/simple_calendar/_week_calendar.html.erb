@@ -32,16 +32,20 @@
         </tr>
         <% times.each do |time| %>
           <tr>
-            <td><%= time %></td>
+            <td bgcolor = "FCCD99"><%= time %></td>
             <% week.each do |day| %>
-              <td>
-                <% if check_reservation(reservations, day, time) %>
+              <% if check_reservation(reservations, day, time) %>
+                <td bgcolor = "#f9caca">
                   <%= link_to "×", root_path, class: "calendar-text"%>
-                <%elsif day.wday == 0 || day.wday == 6%>
+                </td>
+              <%elsif day.wday == 0 || day.wday == 6%>
+                <td bgcolor = "AFAFAF">
                   <div class = "calendar-text">
                     <%="-"%>
                   </div>
-                <% else %>
+                </td>
+              <% else %>
+                <td bgcolor = "#CAF9F4">
                   <% if user_signed_in? && @user.admin == false %>
                     <%= link_to new_reservation_path(date: day, time: time, user_id: current_user.id), class: "calendar-text" do %>
                       <%= '○' %>
@@ -49,8 +53,8 @@
                   <%else%>
                     <%= '○' %>
                   <%end%>
-                <%end%>
-              </td>
+                </td>
+              <%end%>
             <% end %>
           </tr>
         <% end %>

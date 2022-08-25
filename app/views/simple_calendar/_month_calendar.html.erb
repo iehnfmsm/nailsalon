@@ -39,7 +39,7 @@
                   <%= link_to "#{check_name(reservations, day, time)}", root_path, class: "has-reservation"%>
                 </td>
               <%elsif day.wday == 0 || day.wday == 6%>
-                <td><%="-"%></td>
+                <td bgcolor = "AFAFAF"><%="-"%></td>
               <% else %>
                 <td bgcolor = "#CAF9F4">
                   <% if user_signed_in? && current_user.admin == false %>

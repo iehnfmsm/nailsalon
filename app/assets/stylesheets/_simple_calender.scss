@@ -16,7 +16,7 @@
   }
 
   th {
-    padding: 6px;
+    padding: 5px;
     font-weight: 600;
     background-color: lightyellow;
     border-bottom: 2px solid rgb(221, 221, 221);
@@ -29,7 +29,7 @@
   }
 
   td {
-    padding: 6px;
+    padding: 5px;
     vertical-align: top;
     width: 12.5%;
     text-align: center;
@@ -50,19 +50,31 @@
   }
 
   .day {
-    height: 30px;
+    height: 20px;
   }
 
   .wday-0 {
     background-color: #f9cece;
+    font-weight: 600;
   }
-  .wday-1 {background-color: lightgoldenrodyellow;}
-  .wday-2 {background-color: lightgoldenrodyellow;}
-  .wday-3 {background-color: lightgoldenrodyellow;}
-  .wday-4 {background-color: lightgoldenrodyellow;}
-  .wday-5 {background-color: lightgoldenrodyellow;}
+  .wday-1 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-2 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-3 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-4 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-5 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
   .wday-6 {
     background-color: #bcd8ff;
+    font-weight: 600;
   }
 
   .today {
@@ -95,28 +107,86 @@
 
 // week
 .simple-calendars {
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
+  table {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    box-sizing: border-box;
+    max-width: 90%;
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  tr {
+    border-collapse: collapse;
+  }
+
+  th {
+    padding: 6px;
+    background-color: lightyellow;
+    border-bottom: 2px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    border-left: 1px solid rgb(221, 221, 221);
+    border-right: 1px solid rgb(221, 221, 221);
+    border-top: 0px none rgb(51, 51, 51);
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  td {
+    padding: 6px;
+    vertical-align: top;
+    width: 12.5%;
+    text-align: center;
+
+    border: 1px solid #ddd;
+    border-top-color: rgb(221, 221, 221);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(221, 221, 221);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(221, 221, 221);
+    border-left-style: solid;
+    border-left-width: 1px;
+  }
 
   .day {
-    width: 12.5%;
-    height: 30px;
+    height: 20px;
   }
 
   .wday-0 {
     background-color: #f9cece;
+    font-weight: 600;
   }
-  .wday-1 {}
-  .wday-2 {}
-  .wday-3 {}
-  .wday-4 {}
-  .wday-5 {}
+  .wday-1 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-2 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-3 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-4 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-5 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
   .wday-6 {
     background-color: #bcd8ff;
+    font-weight: 600;
   }
   .calendar-text{
-    height: 30px;
+    height: 20px;
+    text-decoration: none;
+    color: black;
   }
   .today {
     background-color: rgb(184, 243, 184);
