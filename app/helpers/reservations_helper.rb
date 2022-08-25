@@ -30,11 +30,11 @@ module ReservationsHelper
     if reservations_count > 1
       reservations.each do |reservation|
         result = reservation[:date].eql?(day.strftime("%Y-%m-%d")) && reservation[:time].eql?(time)
-        return reservation[:name] if result
+        return reservation if result
       end
     else
       result = reservations[0][:date].eql?(day.strftime("%Y-%m-%d")) && reservations[0][:time].eql?(time)
-      return reservations[0][:name] if result
+      return reservations[0] if result
     end
   end
 end

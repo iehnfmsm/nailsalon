@@ -33,7 +33,6 @@
     vertical-align: top;
     width: 12.5%;
     text-align: center;
-
     border: 1px solid #ddd;
     border-top-color: rgb(221, 221, 221);
     border-top-style: solid;
@@ -187,6 +186,9 @@
     height: 20px;
     text-decoration: none;
     color: black;
+  }
+  .calendar-heading{
+    margin-left: 5%;
   }
   .today {
     background-color: rgb(184, 243, 184);

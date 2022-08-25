@@ -6,11 +6,16 @@ class Admin::ReservationsController < ApplicationController
     @reservations = Reservation.all.where("date >= ?", Date.current).where("date < ?", Date.current >> 3).order(date: :asc)
   end
 
+  def show
+    @reservation = Reservation.find(params[:id])
+    @user = User.find(@reservation.user_id)
+    @reservations = Reservation.all.where(user_id: @user.id).where("date >= ?", Date.current).where("date < ?", Date.current >> 3).order(date: :asc)
+  end
 
 private
 
-def if_not_admin
-  redirect_to root_path unless current_user.admin?
-end
+  def if_not_admin
+    redirect_to root_path unless current_user.admin?
+  end
 
 end

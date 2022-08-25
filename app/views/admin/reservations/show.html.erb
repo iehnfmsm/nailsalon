@@ -1,0 +1,17 @@
+<%=render "users/shared/header"%>
+
+<div class = "admin-username">
+  ＜<%=@user.name%>さんの予約一覧＞
+</div>
+<div class = "all-reservation">
+  <%@reservations.each do |reservation|%>
+    <div class = "reservation">
+      <div class = "reservation-date">
+        <%=reservation.date.year%>年<%=reservation.date.month%>月<%=reservation.date.day%>（<%=wdays[reservation.date.wday]%>）：<%=reservation.prefer.time%>
+      </div>
+      <div class = "reservation-edit">
+        <%=link_to "編集", admin_reservations_path%>
+      </div>
+    </div>
+  <%end%>
+</div>

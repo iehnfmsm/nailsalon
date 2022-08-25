@@ -1,3 +1,43 @@
 // Place all the styles related to the admin::reservations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-username{
+  height: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.reservation{
+  height: 50px;
+  width: 70vw;
+  margin-left: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reservation-date{
+  padding-left: 20px;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.reservation-edit{
+  text-align: center;
+  width: 20%;
+  height: 100%;
+  border-left: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a{
+    text-decoration: none;
+    color: black;
+  }
+}
