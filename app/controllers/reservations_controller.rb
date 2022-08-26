@@ -1,5 +1,8 @@
 class ReservationsController < ApplicationController
   def index
+    if current_user.admin?
+      redirect_to admin_reservations_path
+    end
     if user_signed_in?
       @user_prefers = UserPrefer.where(user_id: current_user.id)
       @user = User.find(current_user.id)
@@ -35,8 +38,13 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation = Reservation.find(params[:id])
+    user = User.find(@reservation.user_id).id
     @reservation.destroy
-    redirect_to root_path
+    if current_user.admin?
+      redirect_to admin_reservation_path(user)
+    else
+      redirect_to user_path(user)
+    end
   end
 
 

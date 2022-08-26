@@ -19,8 +19,7 @@ class Admin::ReservationsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
-    @user = User.find(@reservation.user_id)
+    @user = User.find(params[:id])
     @reservations = Reservation.all.where(user_id: @user.id).where("date >= ?", Date.current).where("date < ?", Date.current >> 3).order(date: :asc)
   end
 

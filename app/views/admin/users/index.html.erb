@@ -2,6 +2,11 @@
 
 <h1>管理者用ユーザー管理ページ</h1>
 
+
+<%= link_to admin_reservations_path do%>
+  <button class="admin-link">予約管理ページへ</button>
+<% end %>
+
 <%@users.each do |user|%>
   <div class = "user-list">
     <div class = "user-name">

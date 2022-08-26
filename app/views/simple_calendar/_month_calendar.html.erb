@@ -36,7 +36,7 @@
             <% week.each do |day| %>
               <% if check_reservation(reservations, day, time) %>
                 <td bgcolor = "#f9caca">
-                  <%= link_to "#{check_name(reservations, day, time)[:name]}", admin_reservation_path(check_name(reservations, day, time)[:id]), class: "has-reservation"%>
+                  <%= link_to "#{check_name(reservations, day, time)[:name]}", admin_reservation_path(User.find_by(name: check_name(reservations, day, time)[:name]).id), class: "has-reservation"%>
                 </td>
               <%elsif day.wday == 0 || day.wday == 6%>
                 <td bgcolor = "AFAFAF"><%="-"%></td>

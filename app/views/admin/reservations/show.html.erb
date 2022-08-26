@@ -7,10 +7,10 @@
   <%@reservations.each do |reservation|%>
     <div class = "reservation">
       <div class = "reservation-date">
-        <%=reservation.date.year%>年<%=reservation.date.month%>月<%=reservation.date.day%>（<%=wdays[reservation.date.wday]%>）：<%=reservation.prefer.time%>
+        <%=reservation.date.year%>年<%=reservation.date.month%>月<%=reservation.date.day%>日（<%=wdays[reservation.date.wday]%>）：<%=reservation.prefer.time%>
       </div>
-      <div class = "reservation-edit">
-        <%=link_to "編集", admin_reservations_path%>
+      <div class = "reservation-delete">
+        <%=link_to "削除", reservation_path(reservation.id), method: :delete, data:{confirm: "#{reservation.date.year}年#{reservation.date.month}月#{reservation.date.day}日（#{wdays[reservation.date.wday]}）：#{reservation.prefer.time}の予約を削除しますか？"}%>
       </div>
     </div>
   <%end%>
