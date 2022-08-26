@@ -4,8 +4,13 @@
     <%= link_to image_tag("furima-logo-color.png", class:"furima-icon"), "/" %>
     <ul class='lists-right'>
       <% if user_signed_in? %>
-      <li><%= link_to current_user.name, user_path(current_user.id), class: "user-nickname"%> </li> 
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li>
+        <%if current_user.admin == false%>
+          <li><%= link_to current_user.name, user_path(current_user.id), class: "user-nickname"%> </li> 
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li>
+        <%else%> <%#管理者は予約しないので予約管理ページに飛ぶ%>
+          <li><%= link_to current_user.name, admin_reservations_path, class: "user-nickname"%> </li> 
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li>
+        <%end%>
       <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
       <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>

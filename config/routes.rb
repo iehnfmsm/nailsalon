@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :reservations, only: [:new, :create, :destroy]
     namespace :admin do
-      resources :reservations, only: [:index, :show]
+      resources :reservations, only: [:index, :show, :new]
     end
 
   resources :users, only: [:show]

@@ -23,7 +23,11 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
-      redirect_to user_path(current_user.id)
+      if current_user.admin == false
+        redirect_to user_path(current_user.id)
+      else
+        redirect_to admin_reservations_path
+      end
     else
       redirect_to root_path
     end

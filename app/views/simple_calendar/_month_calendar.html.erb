@@ -42,8 +42,8 @@
                 <td bgcolor = "AFAFAF"><%="-"%></td>
               <% else %>
                 <td bgcolor = "#CAF9F4">
-                  <% if user_signed_in? && current_user.admin == false %>
-                    <%= link_to new_reservation_path(date: day, time: time, user_id: current_user.id), class:"no-reservation" do %>
+                  <% if user_signed_in? && current_user.admin == true %>
+                    <%= link_to new_admin_reservation_path(date: day, time: time), class:"no-reservation" do %>
                       <%= '○' %>
                     <% end %>
                   <%else%>

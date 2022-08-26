@@ -1,0 +1,25 @@
+<h1>予約フォーム</h1>
+<p>まだ予約は確定していません</p>
+<dl>
+	<dt>名前</dt>
+	<dd><%# current_user.name %></dd>
+	<dt>希望日</dt>
+	<dd><%= "#{@date.year}年#{@date.month}月#{@date.day}日" %></dd>
+  <dt>時間</dt>
+  <dd><%= @time %></dd>
+</dl>
+
+<%= form_for @reservation, method: :post, url: reservations_path do |form| %>
+	<%= form.hidden_field :date, value: @date %>
+	<%= form.hidden_field :prefer_id, value: @time_id %>
+  <%= form.collection_select :user_id, User.where("id > ?",1), :id, :name, include_blank:"選択してください"%>
+  <%= form.hidden_field :start_time , value: @start_time%>
+  <dt>備考</dt>
+	<div>
+		<%= form.text_field :remark , class: "reservation-remarks"%>
+	</div>
+	<div>
+		<%= form.submit '送信する', class: "reservation-btn" %>
+		<%= link_to "戻る", root_path, class: "return-btn"%>
+	</div>
+<% end %>
