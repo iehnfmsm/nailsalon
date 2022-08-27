@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   def index
-    if current_user.admin?
+    if user_signed_in? && current_user.admin?
       redirect_to admin_reservations_path
     end
     if user_signed_in?
