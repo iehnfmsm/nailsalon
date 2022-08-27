@@ -47,3 +47,43 @@
     color: black;
   }
 }
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 80vw;
+  margin: 20px auto;
+}
+
+th {
+  height: 50px;
+  border: 1.5px solid  black;
+  background-color: skyblue;
+}
+
+
+td{
+  height: 50px;
+  border: 1px solid darkgray;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.admin-user-btn{
+  width: 100%;
+  height: 100%;
+}
+
+.name{
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.name-head{
+  padding-left: 10px;
+}
+
+.edit-delete{
+  width: 13%
+}
