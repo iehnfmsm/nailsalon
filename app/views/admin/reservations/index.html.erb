@@ -1,12 +1,14 @@
 <%= render "users/shared/header"%>
 
 <h1>管理者用予約管理ページ</h1>
-<%= link_to admin_users_path do%>
-  <button class="admin-link">ユーザー管理ページへ</button>
-<% end %>
-
-
+<div>
+  <%= link_to admin_users_path do%>
+    <button class="admin-link">ユーザー管理ページへ</button>
+  <% end %>
+</div>
+<div>
 <%= alert%>
+</div>
 <div class="col-12 mt-3">
   <%= month_calendar events: @reservations do |date, reservations| %>
     <%= date.day %>

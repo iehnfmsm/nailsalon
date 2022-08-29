@@ -1,4 +1,7 @@
 class ReservationsController < ApplicationController
+
+  before_action :authenticate_user!, only:[:new]
+
   def index
     if user_signed_in? && current_user.admin?
       redirect_to admin_reservations_path
