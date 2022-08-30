@@ -11,6 +11,7 @@ class ReservationsController < ApplicationController
       @user = User.find(current_user.id)
     end
     @reservations = Reservation.all.where("date >= ?", Date.current).where("date < ?", Date.current >> 3).order(date: :desc)
+    search_date
   end
 
   def new
@@ -55,5 +56,11 @@ class ReservationsController < ApplicationController
   
   def reservation_params
     params.require(:reservation).permit(:user_id, :prefer_id, :date, :start_time, :remark)
+  end
+
+  def search_date
+    if params["start_date(1i)"] != nil && params["start_date(2i)"] != nil && params["start_date(3i)"] != nil
+      params[:start_date] = Date.new params["start_date(1i)"].to_i, params["start_date(2i)"].to_i, params["start_date(3i)"].to_i
+    end
   end
 end

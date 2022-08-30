@@ -4,6 +4,7 @@ class Admin::ReservationsController < ApplicationController
 
   def index
       @reservations = Reservation.all.where("date >= ?", Date.current).where("date < ?", Date.current >> 3).order(date: :asc)
+      search_date
   end
 
   def new
@@ -29,4 +30,9 @@ private
     redirect_to root_path unless user_signed_in? && current_user.admin?
   end
 
+  def search_date
+    if params["start_date(1i)"] != nil && params["start_date(2i)"] != nil && params["start_date(3i)"] != nil
+      params[:start_date] = Date.new params["start_date(1i)"].to_i, params["start_date(2i)"].to_i, params["start_date(3i)"].to_i
+    end
+  end
 end

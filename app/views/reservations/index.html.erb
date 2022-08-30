@@ -14,6 +14,12 @@
     <p>希望する日付の◯をクリックすると予約確認ページへ移動します</p>
   </div>
   <%end%>
+  <div class = "selecting-date">
+  <%= form_with url: root_path, method: :get, local: true do |f|%>
+    <%=f.date_select :start_date%>
+    <%=f.submit "検索する"%>
+  <%end%>
+  </div>
   <%= alert%>
   <div class="col-12 mt-3">
     <%= week_calendar events: @reservations do |date, reservations| %>
