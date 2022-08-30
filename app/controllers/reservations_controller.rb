@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
       @user_prefers = UserPrefer.where(user_id: current_user.id)
       @user = User.find(current_user.id)
     end
-    @reservations = Reservation.all.where("date >= ?", Date.current).where("date < ?", Date.current >> 3).order(date: :desc)
+    @reservations = Reservation.all.where("date >= ?", Date.current).where("date < ?", Date.current >> 6).order(date: :desc)
     search_date
   end
 

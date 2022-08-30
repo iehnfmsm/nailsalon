@@ -3,7 +3,7 @@
     <%= link_to t('simple_calendar.previous', default: '前月'), calendar.url_for_previous_view %>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
     <%= link_to t('simple_calendar.next', default: '翌月'), calendar.url_for_next_view %>
-    <% reservations = Reservation.reservations_after_three_month %>
+    <% reservations = Reservation.reservations_after_six_month %>
   </div>
 
   <table class="table table-striped">
@@ -38,7 +38,7 @@
                 <td bgcolor = "#f9caca">
                   <%= link_to "#{check_name(reservations, day, time)[:name]}", admin_reservation_path(User.find_by(name: check_name(reservations, day, time)[:name]).id), class: "has-reservation"%>
                 </td>
-              <%elsif day.wday == 0 || day.wday == 6%>
+              <%elsif day.wday == 0 || day.wday == 6 || day <= Date.today%>
                 <td bgcolor = "AFAFAF"><%="-"%></td>
               <% else %>
                 <td bgcolor = "#CAF9F4">

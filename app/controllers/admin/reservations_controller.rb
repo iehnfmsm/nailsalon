@@ -3,7 +3,7 @@ class Admin::ReservationsController < ApplicationController
   before_action :if_not_admin
 
   def index
-      @reservations = Reservation.all.where("date >= ?", Date.current).where("date < ?", Date.current >> 3).order(date: :asc)
+      @reservations = Reservation.all.where("date >= ?", Date.current).where("date < ?", Date.current >> 6).order(date: :asc)
       search_date
   end
 
@@ -21,7 +21,7 @@ class Admin::ReservationsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @reservations = Reservation.all.where(user_id: @user.id).where("date >= ?", Date.current).where("date < ?", Date.current >> 3).order(date: :asc)
+    @reservations = Reservation.all.where(user_id: @user.id).where("date >= ?", Date.current).where("date < ?", Date.current >> 6).order(date: :asc)
   end
 
 private
