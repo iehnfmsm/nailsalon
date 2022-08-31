@@ -3,8 +3,9 @@
     <%= link_to t('simple_calendar.previous', default: '前週'), calendar.url_for_previous_view %>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
     <%= link_to t('simple_calendar.next', default: '翌週'), calendar.url_for_next_view %>
-    <% reservations = Reservation.reservations_after_three_month %>
+    <% reservations = Reservation.reservations_after_six_month %>
   </div>
+
   <table class="table table-striped">
     <thead>
       <tr>
@@ -14,6 +15,7 @@
         <% end %>
       </tr>
     </thead>
+
     <tbody>
       <% date_range.each_slice(7) do |week| %>
         <tr>
@@ -30,23 +32,29 @@
         </tr>
         <% times.each do |time| %>
           <tr>
-            <td><%= time %></td>
+            <td bgcolor = "FCCD99"><%= time %></td>
             <% week.each do |day| %>
-              <td>
-                <% if check_reservation(reservations, day, time) %>
-                  <%= link_to "×", root_path%>
-                <%elsif day.wday == 0 || day.wday == 6%>
-                <%="-"%>
-                <% else %>
+              <% if check_reservation(reservations, day, time) %>
+                <td bgcolor = "#f9caca">
+                  <%= link_to "×", root_path, class: "calendar-text"%>
+                </td>
+              <%elsif day.wday == 0 || day.wday == 6 || day <= Date.today%>
+                <td bgcolor = "AFAFAF">
+                  <div class = "calendar-text">
+                    <%="-"%>
+                  </div>
+                </td>
+              <% else %>
+                <td bgcolor = "#CAF9F4">
                   <% if user_signed_in? && @user.admin == false %>
-                    <%= link_to new_reservation_path(date: day, time: time, user_id: current_user.id) do %>
+                    <%= link_to new_reservation_path(date: day, time: time, user_id: current_user.id), class: "calendar-text" do %>
                       <%= '○' %>
                     <% end %>
                   <%else%>
                     <%= '○' %>
                   <%end%>
-                <%end%>
-              </td>
+                </td>
+              <%end%>
             <% end %>
           </tr>
         <% end %>

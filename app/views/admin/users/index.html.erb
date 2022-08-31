@@ -2,13 +2,40 @@
 
 <h1>管理者用ユーザー管理ページ</h1>
 
-<%@users.each do |user|%>
-  <div class = "user-list">
-    <div class = "user-name">
-      <%=user.name%>
-    </div>
-    <div class = "user-delete">
-      <%=link_to "削除する", admin_user_path(user.id), method: :delete, data:{confirm: "#{user.name}さんを削除しますか？"}%>
-    </div>
-  </div>
-<%end%>
+
+<%= link_to admin_reservations_path do%>
+  <button class="admin-link">予約管理ページへ</button>
+<% end %>
+
+<table>
+  <tr>
+    <th class = "name-head">名前</th>
+    <th>直近の予約</th>
+    <th class = "edit-delete">ユーザー詳細</th>
+    <th class = "edit-delete">ユーザー削除</th>
+  </tr>
+  <%@users.each do |user|%>
+    <tr>
+      <td class = "name"><%=user.name%></td>
+      <td class = "text-center">
+        <%if user.reservations.select{|item| item[:date] >= Date.today} == [] %>
+          現在予約無し
+        <%else%>
+          <%="#{user.reservations.select{|item| item[:date] >= Date.today}.sort_by{|a| a[:date]}[0].date}：#{user.reservations.select{|item| item[:date] >= Date.today}.sort_by{|a| a[:date]}[0].prefer.time}"%>
+        <%end%>
+      </td>
+      <td class = "text-center">
+        <%=link_to admin_reservation_path(user.id) do%>
+          <button class = "admin-user-btn">詳細</button>
+        <%end%>
+      </td>
+      <td class = "text-center">
+        <%=link_to admin_user_path(user.id), method: :delete, data:{confirm: "#{user.name}さんを削除しますか？"} do%>
+          <button class = "admin-user-btn">削除</button>
+        <%end%>
+      </td>
+      
+    </tr>
+  <%end%>
+</table>
+

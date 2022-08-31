@@ -1,22 +1,79 @@
 .simple-calendar {
-  width: 65%;
-  margin-left: 20px;
+  table {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid black;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    max-width: 90%;
+    width: 90%;
+  }
+
+  tr {
+    border-collapse: collapse;
+  }
+
+  th {
+    padding: 5px;
+    font-weight: 600;
+    background-color: rgb(249, 249, 70);
+    border-bottom: 2px solid black;
+    border-collapse: collapse;
+    border-left: 1px solid rgb(221, 221, 221);
+    border-right: 1px solid rgb(221, 221, 221);
+    border-top: 0px none rgb(51, 51, 51);
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  td {
+    padding: 5px;
+    vertical-align: top;
+    width: 12.5%;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-top-color: rgb(221, 221, 221);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(221, 221, 221);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(221, 221, 221);
+    border-left-style: solid;
+    border-left-width: 1px;
+  }
 
   .day {
-    border: 1px solid black;
-    height: 92px;
+    height: 20px;
   }
 
   .wday-0 {
     background-color: #f9cece;
+    font-weight: 600;
   }
-  .wday-1 {}
-  .wday-2 {}
-  .wday-3 {}
-  .wday-4 {}
-  .wday-5 {}
+  .wday-1 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-2 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-3 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-4 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-5 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
   .wday-6 {
     background-color: #bcd8ff;
+    font-weight: 600;
   }
 
   .today {
@@ -37,99 +94,107 @@
   .current-month {}
 
   .has-events {
-    background-color: yellow;
   }
-}
+  .has-reservation{
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+  }
 
-.outpatient-calendar{
-  display: flex;
-  margin: 30px 0;
-}
-.outpatient-form{
-  width: 25%;
-}
-.outpatient-user-name{
-  text-align: center;
-  height: 60px;
-  width: 80%;
-  margin: 20px auto 30px;
-  font-size: 20px;
-  border: 2px solid #007bff;
-  background-color: #badcf8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.outpatient-form-side{
-  width: 80%;
-  margin: 0 auto;
-}
-.outpatient-form-contents{
-  margin-left: 20px;
-}
-.outpatient-submit{
-  margin: 30px 0 0 0;
-}
-.outpatient-submit-btn{
-  padding:5px 10px;
-  background-color: #badcf8;
-}
-select#outpatient_start_time_2i {
-  width: 45px;
-}
-
-.aa{
-  width: 20px;
-}
-
-.outpatient-price-image{
-  text-align: end;
-}
-.outpatient-image{
-  width: 20px;
-  height: 20px;
-  margin-left: 5px;
-}
-
-.table thead th {
-  background-color: #badcf8;
-}
-.table thead th {
-  border: 1px solid black;
-}
-
-.detail-values-text {
-  width: 153px;
-  white-space: pre-line;
-  word-wrap: break-word;
-  text-align: left;
-  height: 100%;
-  overflow-x: scroll;
-  // overflow-x: scroll;
+  .no-reservation{
+    text-decoration: none;
+    color: black;
+  }
 }
 
 
 
 // week
 .simple-calendars {
-  width: 80%;
-  margin: 0 auto;
+  table {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    box-sizing: border-box;
+    max-width: 90%;
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  tr {
+    border-collapse: collapse;
+  }
+
+  th {
+    padding: 6px;
+    background-color: lightyellow;
+    border-bottom: 2px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    border-left: 1px solid rgb(221, 221, 221);
+    border-right: 1px solid rgb(221, 221, 221);
+    border-top: 0px none rgb(51, 51, 51);
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  td {
+    padding: 6px;
+    vertical-align: top;
+    width: 12.5%;
+    text-align: center;
+
+    border: 1px solid #ddd;
+    border-top-color: rgb(221, 221, 221);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(221, 221, 221);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(221, 221, 221);
+    border-left-style: solid;
+    border-left-width: 1px;
+  }
 
   .day {
+    height: 20px;
   }
 
   .wday-0 {
     background-color: #f9cece;
+    font-weight: 600;
   }
-  .wday-1 {}
-  .wday-2 {}
-  .wday-3 {}
-  .wday-4 {}
-  .wday-5 {}
+  .wday-1 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-2 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-3 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-4 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
+  .wday-5 {
+    background-color: lightgoldenrodyellow;
+    font-weight: 600;}
   .wday-6 {
     background-color: #bcd8ff;
+    font-weight: 600;
   }
-
+  .calendar-text{
+    height: 20px;
+    text-decoration: none;
+    color: black;
+  }
+  .calendar-heading{
+    margin-left: 5%;
+  }
   .today {
     background-color: rgb(184, 243, 184);
   }
@@ -145,7 +210,8 @@ select#outpatient_start_time_2i {
   .next-month {
     background-color: rgb(217, 217, 217);
   }
-  .current-month {}
+  .current-month {
+  }
 
   .has-events {
   }

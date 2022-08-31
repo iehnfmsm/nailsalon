@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   root to: "reservations#index"
 
   resources :reservations, only: [:new, :create, :destroy]
+    namespace :admin do
+      resources :reservations, only: [:index, :show, :new]
+    end
 
   resources :users, only: [:show]
     namespace :admin do
-      resources :users, only: [:index, :destroy]
+      resources :users, only: [:index, :destroy, :edit, :update]
     end
 end
