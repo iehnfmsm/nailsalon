@@ -2,4 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.admin-memo-form{
 
+  height: 30vh;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-memo {
+  width: 40vw;
+  height: 20vh;
+}
+
+.submit-btn{
+  width: 100px;
+  height: 25px;
+}

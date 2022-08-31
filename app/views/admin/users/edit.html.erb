@@ -1,0 +1,12 @@
+<%= render "users/shared/header"%>
+
+  
+  <%=form_with model: @user, url: admin_user_path(@user.id), class: "admin-memo-form",local: true do |f|%>
+    <%=f.hidden_field :name, value: @user.name%>
+    <%=f.hidden_field :email, value: @user.email%>
+    <%=f.hidden_field :birthday, value: @user.birthday%>
+    <%=f.hidden_field :user_memo, value: @user.user_memo%>
+    <%=f.text_area :admin_memo, class: "admin-memo", placeholder: "備考を記入してください"%>
+    <%=f.submit "登録する", class: "submit-btn"%>
+  <%end%>
+
