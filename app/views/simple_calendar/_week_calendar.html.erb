@@ -36,13 +36,11 @@
             <% week.each do |day| %>
               <% if check_reservation(reservations, day, time) %>
                 <td bgcolor = "#f9caca">
-                  <%= link_to "×", root_path, class: "calendar-text"%>
+                  <%= "×"%>
                 </td>
               <%elsif day.wday == 0 || day.wday == 6 || day <= Date.today%>
                 <td bgcolor = "AFAFAF">
-                  <div class = "calendar-text">
                     <%="-"%>
-                  </div>
                 </td>
               <% else %>
                 <td bgcolor = "#CAF9F4">

@@ -115,7 +115,7 @@
     -webkit-border-horizontal-spacing: 0px;
     -webkit-border-vertical-spacing: 0px;
     background-color: rgba(0, 0, 0, 0);
-    border: 1px solid rgb(221, 221, 221);
+    border: 2px solid black;
     border-collapse: collapse;
     box-sizing: border-box;
     max-width: 90%;
@@ -130,32 +130,33 @@
   th {
     padding: 6px;
     background-color: lightyellow;
-    border-bottom: 2px solid rgb(221, 221, 221);
+    border-bottom: 2px solid black;
     border-collapse: collapse;
-    border-left: 1px solid rgb(221, 221, 221);
-    border-right: 1px solid rgb(221, 221, 221);
+    border-left: 1px solid black;
+    border-right: 1px solid black;
     border-top: 0px none rgb(51, 51, 51);
     box-sizing: border-box;
-    text-align: left;
+    text-align: center;
   }
 
   td {
     padding: 6px;
-    vertical-align: top;
+    font-weight: 600;
+    vertical-align: middle;
     width: 12.5%;
     text-align: center;
 
     border: 1px solid #ddd;
-    border-top-color: rgb(221, 221, 221);
+    border-top-color: black;
     border-top-style: solid;
     border-top-width: 1px;
-    border-right-color: rgb(221, 221, 221);
+    border-right-color: black;
     border-right-style: solid;
     border-right-width: 1px;
-    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-color: black;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-left-color: rgb(221, 221, 221);
+    border-left-color: black;
     border-left-style: solid;
     border-left-width: 1px;
   }
@@ -169,19 +170,19 @@
     font-weight: 600;
   }
   .wday-1 {
-    background-color: lightgoldenrodyellow;
+    background-color: white;
     font-weight: 600;}
   .wday-2 {
-    background-color: lightgoldenrodyellow;
+    background-color: white;
     font-weight: 600;}
   .wday-3 {
-    background-color: lightgoldenrodyellow;
+    background-color: white;
     font-weight: 600;}
   .wday-4 {
-    background-color: lightgoldenrodyellow;
+    background-color: white;
     font-weight: 600;}
   .wday-5 {
-    background-color: lightgoldenrodyellow;
+    background-color: white;
     font-weight: 600;}
   .wday-6 {
     background-color: #bcd8ff;
@@ -193,7 +194,27 @@
     color: black;
   }
   .calendar-heading{
-    margin-left: 5%;
+    height: 30px;
+    padding: auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+      height: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      color: black;
+    }
+
+    span{
+      height: 30px;
+      vertical-align: middle;
+      margin: 0 20px 5px;
+      font-size: 20px;
+      font-weight: 600;
+      color: black;
+    }
+
   }
   .today {
     background-color: rgb(184, 243, 184);
@@ -214,5 +235,10 @@
   }
 
   .has-events {
+  }
+
+  .calendar-text{
+    font-size: 18px;
+    font-weight: 600;
   }
 }

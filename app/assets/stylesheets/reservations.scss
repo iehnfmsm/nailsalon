@@ -2,3 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//一般ユーザートップページ
+
+.selecting-date{
+  margin-bottom: 30px;
+  text-align: center;
+  form{
+    select{
+
+      font-size: 16px;
+      padding: 5px;
+      margin: 0 5px;
+    }
+
+    input{
+      height: 32px;
+      width: 80px;
+    }
+  }
+}
+
+.usage{
+  margin-left: 5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
