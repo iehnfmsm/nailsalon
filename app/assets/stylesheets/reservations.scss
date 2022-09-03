@@ -22,9 +22,113 @@
   }
 }
 
+//一般ユーザー予約ページ
+
 .usage{
   margin-left: 5%;
   margin-top: 20px;
   margin-bottom: 20px;
+}
 
+.reserve-page{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.reservation-information{
+  width: 60vw;
+  height: 30vh;
+  margin: 20px auto 0;
+  border: 2px solid black;
+  border-collapse: collapse;
+  background-color: white;
+
+  .caution{
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    p{
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+  .reservation-content{
+    height: calc(85% / 3);
+    width: 100%;
+    display: table;
+    dt{
+      width: 30%;
+      height: 100%;
+      text-align: center;
+      border-top: 1px solid black;
+      border-right: 1px solid black;
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 20px;
+    }
+    .reservation-data{
+      display: table-cell;
+      width: 70%;
+      height: 100%;
+      text-align: center;
+      border-top: 1px solid black;
+      vertical-align: middle;
+      font-size: 20px;
+    }
+  }
+}
+
+.new_reservation{
+  width: 60%;
+  height: 220px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.remark-form{
+  width: 100%;
+  height: 150px;
+  margin-top: 20px;
+  .remark-form-header{
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .reservation-remarks{
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+}
+
+.buttons{
+  height: 40px;
+  width: 100%;
+  padding: 0 5%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reservation-btn{
+  height: 100%;
+  width: 40%;
+  font-size: 20px;
+}
+
+.return-btn-area{
+  height: 100%;
+  width: 40%;
+  .return-btn{
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+  }
 }
