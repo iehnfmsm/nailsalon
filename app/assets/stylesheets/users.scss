@@ -131,3 +131,105 @@ h2{
   }
 }
 
+
+//ユーザー情報ページ
+
+.show-header{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.show-prefer{
+  width: 70vw;
+  margin: 50px auto;
+  border: 2px solid black;
+  display: flex;
+
+  .show-prefer-header{
+    width: 30%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-right: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+  }
+  .show-prefer-contents{
+    width: 70%;
+    background-color: white;
+
+    .show-prefer-content{
+      text-align: center;
+      margin: 5px 0;
+    }
+
+  }
+}
+
+
+.show-reservations{
+  width: 70vw;
+  margin: 30px 15vw;
+  border: 2px solid black;
+
+  .show-reservation-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-bottom: 1px solid black;
+    background-color: yellow;
+
+    .show-reservation-header-main{
+      white-space: nowrap;
+      text-align: center;
+      margin-right: 10px;
+      width: 20%;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .show-reservation-header-sub{
+      width: 75%;
+      color: red;
+    }
+  }
+
+
+  .show-reservation{
+
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid black;
+    background-color: white;
+
+    .show-reservation-date{
+      height: 100%;
+      width: 75%;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      font-weight: 600;
+    }
+
+    .show-reservation-destroy{
+      height: 100%;
+      width: 20%;
+
+      .show-reservation-destroy-btn{
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: red;
+        color: white;
+      }
+    }
+    
+  }
+}
