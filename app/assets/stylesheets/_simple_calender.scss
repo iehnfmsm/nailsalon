@@ -1,4 +1,17 @@
 .simple-calendar {
+
+  .calendar-heading{
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    .calendar-title{
+      font-weight: 600;
+      margin: 0 30px;
+    }
+  }
+
   table {
     -webkit-border-horizontal-spacing: 0px;
     -webkit-border-vertical-spacing: 0px;
@@ -26,11 +39,12 @@
     border-top: 0px none rgb(51, 51, 51);
     box-sizing: border-box;
     text-align: left;
+    vertical-align: middle;
   }
 
   td {
     padding: 5px;
-    vertical-align: top;
+    vertical-align: middle;
     width: 12.5%;
     text-align: center;
     border: 1px solid #ddd;

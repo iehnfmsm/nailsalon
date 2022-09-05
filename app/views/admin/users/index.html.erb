@@ -1,11 +1,12 @@
 <%= render "users/shared/header"%>
+<div class = "admin-header">
+  <h1 class = "admin-header-title">管理者用ユーザー管理ページ</h1>
 
-<h1>管理者用ユーザー管理ページ</h1>
 
-
-<%= link_to admin_reservations_path do%>
-  <button class="admin-link">予約管理ページへ</button>
-<% end %>
+  <%= link_to admin_reservations_path, class: "admin-link" do%>
+    <button class="admin-link-btn">予約管理ページへ</button>
+  <% end %>
+</div>
 
 <table>
   <tr>
@@ -17,7 +18,7 @@
   <%@users.each do |user|%>
     <tr>
       <td class = "name"><%=user.name%></td>
-      <td class = "text-center">
+      <td class = "next-reservation">
         <%if user.reservations.select{|item| item[:date] >= Date.today} == [] %>
           現在予約無し
         <%else%>
