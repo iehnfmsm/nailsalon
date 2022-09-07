@@ -21,7 +21,7 @@
     </div>
     <div class = "memo-contents">
       <div class = "user-memo-content">
-        <%if @user.user_memo == ""%>
+        <%if @user.user_memo == "" || @user.user_memo == nil%>
           <%="ユーザーによる備考は未記入"%>
         <%else%>
           <%=@user.user_memo%>

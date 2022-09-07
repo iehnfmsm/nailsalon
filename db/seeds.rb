@@ -10,7 +10,8 @@
 # データベースの初期化かつadminの設定
 # bundle exec rake db:migrate:reset
 # bundle exec rake db:seed
-User.create!(name:  "Admin",
+User.create!(
+  name:  "Admin",
   email: "admin@admin",
   password:              "111111",
   password_confirmation: "111111",
