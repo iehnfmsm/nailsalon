@@ -17,7 +17,7 @@
 	<div class = "admin-new-reservation-name">
 		<div class = "admin-new-reservation-header">名前</div>
 		<div class = "admin-new-reservation-content">
-			<%= form.collection_select :user_id, User.where("id > ?",1), :id, :name, include_blank:"選択してください"%>
+			<%= form.collection_select :user_id, User.where("admin = ?", 0 ), :id, :name, include_blank:"選択してください"%>
 		</div>
 	</div>
   <%= form.hidden_field :start_time , value: @start_time%>
