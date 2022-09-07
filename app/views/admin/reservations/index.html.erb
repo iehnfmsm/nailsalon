@@ -1,17 +1,18 @@
 <%= render "users/shared/header"%>
-
-<h1>管理者用予約管理ページ</h1>
-<div>
-  <%= link_to admin_users_path do%>
-    <button class="admin-link">ユーザー管理ページへ</button>
+<div class = "admin-header">
+  <h1 class = "admin-header-title">管理者用予約管理ページ</h1>
+  <%= link_to admin_users_path, class: "admin-link" do%>
+    <button class = "admin-link-btn">ユーザー管理ページへ</button>
   <% end %>
 </div>
-<%= form_with url: admin_reservations_path, method: :get, local: true do |f|%>
-  <%=f.date_select :start_date, default: params[:start_date]%>
-  <%=f.submit "検索する"%>
-<%end%>
+<div class = "selecting-date">
+  <%= form_with url: admin_reservations_path, method: :get, local: true do |f|%>
+    <%=f.date_select :start_date, default: params[:start_date]%>
+    <%=f.submit "検索する"%>
+  <%end%>
+</div>
 
-<div>
+<div class = "alert">
 <%= alert%>
 </div>
 <div class="col-12 mt-3">

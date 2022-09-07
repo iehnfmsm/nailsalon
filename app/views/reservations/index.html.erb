@@ -1,16 +1,9 @@
   <%= render "users/shared/header"%>
 
-  <%if user_signed_in? && @user.admin == true%>
-    <div class = "admin-user-link">
-      <%=link_to "管理者用のユーザー管理ページへ", admin_users_path%>
-    </div>
-    <div class = "admin-reservation-link">
-      <%=link_to "管理者用の予約管理ページへ", admin_reservations_path%>
-    </div>
-  <%end%>
+
   <h2>予約カレンダー</h2>
   <%if user_signed_in? && @user.admin == false%>
-  <div>
+  <div class = "usage">
     <p>希望する日付の◯をクリックすると予約確認ページへ移動します</p>
   </div>
   <%end%>

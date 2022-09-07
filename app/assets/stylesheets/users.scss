@@ -1,3 +1,235 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  background-color: #f5ceee;
+}
+
+//ログインページ
+
+h2{
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.user-login-form{
+  width: 70vw;
+  height: 60vh;
+  background-color: lightcyan;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.new_user{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.field{
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.field label{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+.field input{
+  width: 100%;
+  height: 50px;
+  font-size: 100%;
+  line-height: 50px;
+  padding: 5px 10px;
+}
+
+.field-remember{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+
+.field-remember label{
+  margin-left: 15px;
+}
+
+.actions{
+  width: 50%;
+  height: 50px;
+}
+
+.actions input{
+  height: 100%;
+  width: 100%;
+  font-size: 22px;
+  background-color: lightgoldenrodyellow;
+}
+
+
+//新規登録ページ
+
+.user-signup-form{
+  width: 70vw;
+  margin: 40px auto;
+  padding-bottom: 10px;
+  background-color: lightcyan;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.form-group{
+  width: 100%;
+  margin-bottom: 10px;
+
+  label{
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .checkbox {
+    padding: 0 20px;
+    margin: 5px auto;
+    label{
+      font-weight: 500;
+    }
+  
+    input{
+      margin: 5px 10px;
+    }
+  }
+}
+
+
+
+.text-field{
+  width: 100%;
+  margin-bottom: 20px;
+
+  label{
+    font-weight: 600;
+  }
+  textarea{
+    width: 100%;
+    height: 100px;
+    padding: 5px 10px;
+    font-size: 18px;
+  }
+}
+
+
+//ユーザー情報ページ
+
+.show-header{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.show-prefer{
+  width: 70vw;
+  margin: 50px auto;
+  border: 2px solid black;
+  display: flex;
+
+  .show-prefer-header{
+    width: 30%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-right: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+  }
+  .show-prefer-contents{
+    width: 70%;
+    background-color: white;
+
+    .show-prefer-content{
+      text-align: center;
+      margin: 5px 0;
+    }
+
+  }
+}
+
+
+.show-reservations{
+  width: 70vw;
+  margin: 30px 15vw;
+  border: 2px solid black;
+
+  .show-reservation-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-bottom: 1px solid black;
+    background-color: yellow;
+
+    .show-reservation-header-main{
+      white-space: nowrap;
+      text-align: center;
+      margin-right: 10px;
+      width: 20%;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .show-reservation-header-sub{
+      width: 75%;
+      color: red;
+    }
+  }
+
+
+  .show-reservation{
+
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid black;
+    background-color: white;
+
+    .show-reservation-date{
+      height: 100%;
+      width: 75%;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      font-weight: 600;
+    }
+
+    .show-reservation-destroy{
+      height: 100%;
+      width: 20%;
+
+      .show-reservation-destroy-btn{
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: red;
+        color: white;
+      }
+    }
+    
+  }
+}

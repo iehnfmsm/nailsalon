@@ -1,25 +1,40 @@
-<h1>予約フォーム</h1>
-<p>まだ予約は確定していません</p>
-<dl>
-	<dt>名前</dt>
-	<dd><%= current_user.name %></dd>
-	<dt>希望日</dt>
-	<dd><%= "#{@date.year}年#{@date.month}月#{@date.day}日" %></dd>
-  <dt>時間</dt>
-  <dd><%= @time %></dd>
-</dl>
+<%= render "users/shared/header"%>
 
-<%= form_for @reservation, method: :post, url: reservations_path do |form| %>
+<h1 class = "reserve-page">予約フォーム</h1>
+
+<div class = "reservation-information">
+	<div class = "caution">
+		<p>（注意）予約は確定していません</p>
+	</div>
+	<dl class = "reservation-content">
+		<dt>名前</dt>
+		<dd class = "reservation-data"><%= current_user.name %></dd>
+	</dl>
+	<dl class = "reservation-content">
+		<dt>希望日</dt>
+		<dd class = "reservation-data"><%= "#{@date.year}年#{@date.month}月#{@date.day}日" %></dd>
+	</dl>
+	<dl class = "reservation-content">
+		<dt>時間</dt>
+		<dd class = "reservation-data"><%= @time %></dd>
+	</dl>
+</div>
+
+<%= form_for @reservation, method: :post, url: reservations_path, class: "reservation-form" do |form| %>
 	<%= form.hidden_field :date, value: @date %>
 	<%= form.hidden_field :prefer_id, value: @time_id %>
   <%= form.hidden_field :user_id, value: current_user.id%>
   <%= form.hidden_field :start_time , value: @start_time%>
-  <dt>備考</dt>
-	<div>
-		<%= form.text_field :remark , class: "reservation-remarks"%>
+	<div class = "remark-form">
+		<div class = "remark-form-header">備考</div>
+		<div class = "remark-form-content">
+			<%= form.text_area :remark , class: "reservation-remarks"%>
+		</div>
 	</div>
-	<div>
-		<%= form.submit '送信する', class: "reservation-btn" %>
-		<%= link_to "戻る", root_path, class: "return-btn"%>
+	<div class = "buttons">
+		<%= form.submit '予約する', class: "reservation-btn" %>
+		<%= link_to root_path, class: "return-btn-area" do%>
+			<button class = "return-btn">戻る</button>
+		<%end%>
 	</div>
 <% end %>

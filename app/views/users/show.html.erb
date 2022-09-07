@@ -1,20 +1,26 @@
 <%= render "users/shared/header" %>
 
-<h1>ユーザー情報一覧</h1>
+<div class = "show-header">ユーザー情報</div>
 
-<h4>希望日時</h4>
-<%@user_prefers.each do |prefer|%>
-  <div><%= "#{prefer.prefer.wday}：#{prefer.prefer.time}"%></div>
-<%end%>
-
-
-<h4>予約一覧</h4>
-
-<p>※予約を修正する場合は、枠を確保してから予約をキャンセルしてください</p>
-
-<%@reservations.each do |reservation|%>
-  <div>
-    <%= "#{reservation.date.year}年#{reservation.date.month}月#{reservation.date.day}日（#{wdays[reservation.date.wday]}）：#{reservation.prefer.time}"%>
-    <%= link_to "予約キャンセル", reservation_path(reservation.id), method: :delete, class:"reservation-destroy", data:{confirm: "#{reservation.date.year}年#{reservation.date.month}月#{reservation.date.day}日（#{wdays[reservation.date.wday]}）：#{reservation.prefer.time}の予約を削除しますか？"}%>
+<div class = "show-prefer">
+  <div class = "show-prefer-header"><p>希望日時</p></div>
+  <div class = "show-prefer-contents">
+    <%@user_prefers.each do |prefer|%>
+      <div class = "show-prefer-content"><%= "#{prefer.prefer.wday}：#{prefer.prefer.time}"%></div>
+    <%end%>
   </div>
-<%end%>
+</div>
+<div class = "show-reservations">
+  <div class = "show-reservation-header">
+    <h4 class = "show-reservation-header-main">予約一覧</h4>
+    <p class = "show-reservation-header-sub">※予約を修正する場合は、枠を確保してから予約をキャンセルしてください</p>
+  </div>
+  <%@reservations.each do |reservation|%>
+    <div class = "show-reservation">
+      <div class = "show-reservation-date"><%= "#{reservation.date.year}年#{reservation.date.month}月#{reservation.date.day}日（#{wdays[reservation.date.wday]}）：#{reservation.prefer.time}"%></div>
+      <%= link_to reservation_path(reservation.id), method: :delete, class:"show-reservation-destroy", data:{confirm: "#{reservation.date.year}年#{reservation.date.month}月#{reservation.date.day}日（#{wdays[reservation.date.wday]}）：#{reservation.prefer.time}の予約を削除しますか？"} do%>
+        <button class = "show-reservation-destroy-btn">予約キャンセル</button>
+      <%end%>
+    </div>
+  <%end%>
+</div>
