@@ -11,6 +11,9 @@ class ReservationsController < ApplicationController
       @user = User.find(current_user.id)
     end
     @reservations = Reservation.all.where("date >= ?", Date.current).where("date < ?", Date.current >> 6).order(date: :desc)
+    if params[:start_date] == nil
+      params[:start_date] = Date.today
+    end
     search_date
   end
 
@@ -61,6 +64,9 @@ class ReservationsController < ApplicationController
   def search_date
     if params["start_date(1i)"] != nil && params["start_date(2i)"] != nil && params["start_date(3i)"] != nil
       params[:start_date] = Date.new params["start_date(1i)"].to_i, params["start_date(2i)"].to_i, params["start_date(3i)"].to_i
+      params["start_date(1i)"] = nil
+      params["start_date(2i)"] = nil
+      params["start_date(3i)"] = nil
     end
   end
 end
