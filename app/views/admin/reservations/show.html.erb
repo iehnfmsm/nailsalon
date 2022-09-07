@@ -1,25 +1,42 @@
 <%=render "users/shared/header"%>
-<div class = "admin-username">
-  <%=@user.name%>
-</div>
-<div class = "admin-prefers">
-  <div class = "admin-prefers-title">
-    ＜希望時間帯＞
+<div class = "admin-user-information">
+  <div class = "admin-user-name">
+    <%=@user.name%>
   </div>
-  <%@user.prefers.each do |prefer|%>
-    <div class = "admin-prefer">
-      <%="#{prefer.wday}：#{prefer.time}"%>
+  <div class = "admin-prefers">
+    <div class = "admin-prefers-title">
+      ＜希望時間帯＞
     </div>
-  <%end%>
+    <div class = "admin-prefer-content">
+    <%@user.prefers.each do |prefer|%>
+      <div class = "admin-prefer">
+        <%="#{prefer.wday}：#{prefer.time}"%>
+      </div>
+    <%end%>
+    </div>
+  </div>
+  <div class = "admin-memos">
+    <div class = "admin-memos-title">
+      ＜備考＞<%=link_to "編集", edit_admin_user_path(@user.id), class: "admin-memo-edit"%>
+    </div>
+    <div class = "memo-contents">
+      <div class = "user-memo-content">
+        <%if @user.user_memo == ""%>
+          <%="ユーザーによる備考は未記入"%>
+        <%else%>
+          <%=@user.user_memo%>
+        <%end%>
+      </div>
+      <div class = "admin-memo-content">
+        <%if @user.admin_memo == ""%>
+          <%="管理者による備考は未記入"%>
+        <%else%>
+          <%=@user.admin_memo%>
+        <%end%>
+      </div>
+    </div>
+  </div>
 </div>
-<div class = "admin-memos">
-  ＜備考＞<%=link_to "備考記入", edit_admin_user_path(@user.id)%>
-  <div class = "admin-user-memo">
-    <%=@user.user_memo%>
-  </div>
-  <div class = "admin-memo">
-    <%=@user.admin_memo%>
-  </div>
 <div class = "admin-reservation">
   ＜予約一覧＞
 </div>

@@ -1,24 +1,38 @@
-<h1>予約フォーム</h1>
-<p>まだ予約は確定していません</p>
-<dl>
-	<dt>希望日</dt>
-	<dd><%= "#{@date.year}年#{@date.month}月#{@date.day}日" %></dd>
-  <dt>時間</dt>
-  <dd><%= @time %></dd>
-</dl>
+<div class = "admin-new-reservation-title">予約フォーム（管理者用）</div>
+<p class = "admin-new-reservation-warning">※まだ予約は確定していません</p>
+<div class = "admin-new-reservation">
+	<div class = "admin-new-reservation-date">
+		<div class = "admin-new-reservation-header">希望日</div>
+		<div class = "admin-new-reservation-content"><%= "#{@date.year}年#{@date.month}月#{@date.day}日" %></div>
+	</div>
+	<div class = "admin-new-reservation-time">
+		<div class = "admin-new-reservation-header">時間</div>
+		<div class = "admin-new-reservation-content"><%= @time %></div>
+	</div>
 
-<%= form_for @reservation, method: :post, url: reservations_path do |form| %>
+
+<%= form_for @reservation, method: :post, url: reservations_path, html:{class: "admin-new-reservation-form"} do |form| %>
 	<%= form.hidden_field :date, value: @date %>
 	<%= form.hidden_field :prefer_id, value: @time_id %>
-  <dt>名前</dt>
-  <%= form.collection_select :user_id, User.where("id > ?",1), :id, :name, include_blank:"選択してください"%>
-  <%= form.hidden_field :start_time , value: @start_time%>
-  <dt>備考</dt>
-	<div>
-		<%= form.text_field :remark , class: "reservation-remarks"%>
+	<div class = "admin-new-reservation-name">
+		<div class = "admin-new-reservation-header">名前</div>
+		<div class = "admin-new-reservation-content">
+			<%= form.collection_select :user_id, User.where("id > ?",1), :id, :name, include_blank:"選択してください"%>
+		</div>
 	</div>
-	<div>
-		<%= form.submit '送信する', class: "reservation-btn" %>
-		<%= link_to "戻る", root_path, class: "return-btn"%>
+  <%= form.hidden_field :start_time , value: @start_time%>
+	<div class = "admin-new-reservation-memo">
+		<div class = "admin-new-reservation-header">備考</div>
+		<div class = "admin-new-reservation-content">
+			<%= form.text_area :remark , class: "reservation-remarks", placeholder: "備考記入欄"%>
+		</div>
+	</div>
+	<div class = "admin-new-reservation-btns">
+		<%= form.submit '送信する', class: "admin-new-reservation-btn" %>
+		<%= link_to root_path do%>
+			<button class = "admin-new-reservation-return">戻る</button>
+		<%end%>
 	</div>
 <% end %>
+
+</div>
