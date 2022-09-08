@@ -1,7 +1,7 @@
 class UserForm
   include ActiveModel::Model
 
-  attr_accessor :name, :email, :password, :birthday, :password_confirmation
+  attr_accessor :name, :email, :password, :birthday, :password_confirmation, :user_memo
 
   with_options presence: true do
     validates :name
@@ -12,6 +12,6 @@ class UserForm
   end
 
   def save
-    User.create(name: name, email: email, password: password, password_confirmation: password_confirmation, birthday: birthday)
+    User.create(name: name, email: email, password: password, password_confirmation: password_confirmation, birthday: birthday, user_memo: user_memo)
   end
 end
