@@ -10,7 +10,9 @@
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
 | birthday           | date   | null: false               |
-
+| user_memo          | text   |                           |
+| admin_memo         | text   |                           |
+| admin              | boolean|                           |
 
 
 
@@ -35,10 +37,10 @@
 
 ## user_prefers テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user    | references | null: false, foreign_key: true |
-| prefer  | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| prefer_id | integer    | null: false                    |
 
 ### Association
 
@@ -51,8 +53,10 @@
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | date            | date       | null: false                    | 
-| course          | integer    | null: false                    | 
+| remark          | text       |                                | 
 | user            | references | null: false, foreign_key: true |
+| prefer_id       | integer    | null: false                    |
+| start_time      | date       |                                |
 
 ### Association
 
