@@ -1,5 +1,5 @@
 # README
-
+  
 # アプリケーション名
 NNails
 
@@ -10,13 +10,13 @@ NNails
 https://nnails.herokuapp.com
 
 # テスト用アカウント
-Basic認証ID: hoge
-Basic認証パスワード: 123456
-管理者メールアドレス: admin@admin
-管理者パスワード: 111111
+Basic認証ID: hoge  
+Basic認証パスワード: 123456  
+管理者メールアドレス: admin@admin  
+管理者パスワード: 111111  
 
 # 利用方法
-## お客サイド
+## 客サイド
 1. トップページ右上の新規登録ページへのリンクからユーザー登録を行なう（備考欄を除いて空欄不可）
 2. カレンダー内の「◯」をクリックして予約ページへ移動し、「送信する」ボタンをクリックする
 3. 画面右上の自分の名前をクリックするとマイページへと遷移し、予約の削除を行なうことができる
@@ -40,7 +40,28 @@ https://docs.google.com/spreadsheets/d/1Di9Z3s9z1GIxXKRfug0V5HeoNq8C65H8YOuLnPyN
 
 # テーブル設計
 
-nailsalon.png
+![image.png
+ 1](images/191fc819ee8933c196b41b1b980d26e717d586db24f1434884549c3127edd69c.png)  
 
 # 画面遷移図
 
+![picture 1](images/0c7e5cfaee13972431799eb4ad5822545b1e1be49b428c53b006ee119cf4d88a.png)  
+
+# 開発環境
+・Ruby on Rails  
+・VSCode  
+・MySQL  
+
+# ローカルでの動作方法
+以下のコマンドを順に実行  
+% git clone https://github.com/nnails  
+% cd nnails  
+% bundle install  
+% yarn install  
+% rails db:migrate  
+% rails s  
+
+# 工夫したポイント
+・高齢者でも使いやすいようにシンプルなWebアプリである  
+・管理者が予約を管理しやすくするためのアプリである  
+・カレンダーの上に日付の検索ボックスを用意して、日付を選択しやすくしている  
